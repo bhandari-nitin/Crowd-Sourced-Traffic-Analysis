@@ -1,10 +1,7 @@
-
-
 package com.example.nsb.musicband;
 
 import java.io.File;
 import java.util.ArrayList;
-
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pDeviceList;
