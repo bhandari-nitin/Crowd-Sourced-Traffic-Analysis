@@ -68,22 +68,6 @@ public class MainActivity extends Activity {
     	
         registerReceiver(wifiServerReceiver, wifiServerReceiverIntentFilter);
 
-/*        
-        wifiManager.createGroup(wifichannel,  new WifiP2pManager.ActionListener()  {
-    	    public void onSuccess() {
-    	    	setServerFileTransferStatus("WiFi Group creation successful");
-
-    	    	//Group creation successful
-    	    }
-
-    	    public void onFailure(int reason) {
-    	    	setServerFileTransferStatus("WiFi Group creation failed");
-
-    	    	//Group creation failed
-
-    	    }
-    	});    	
-    	*/
         
     }
 

@@ -254,17 +254,14 @@ public class ClientActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        //Continue to listen for wifi related system broadcasts even when paused
-        //stopClientReceiver();
+
     }
     
     @Override
     protected void onDestroy() {
         super.onDestroy();
         
-        //Kill thread that is transferring data 
-        
-        //Unregister broadcast receiver
+
         stopClientReceiver();
     }
     

@@ -45,7 +45,7 @@ public class ServerService extends IntentService {
 		serverResult = (ResultReceiver) intent.getExtras().get("serverResult");	
 		
 		
-		//signalActivity("Starting to download");
+
 		 
 		
 		String fileName = "";
@@ -62,11 +62,10 @@ public class ServerService extends IntentService {
 				while(true && serviceEnabled)
 				{
 				
-				//Listen for incoming connections on specified port
-				//Block thread until someone connects 
+
 				socket = welcomeSocket.accept();
 				
-				//signalActivity("TCP Connection Established: " + socket.toString() + " Starting file transfer");
+
 				
 				
 				
@@ -85,46 +84,7 @@ public class ServerService extends IntentService {
 				
 				
 				signalActivity("About to start handshake");
-				//Client-Server handshake
-				
-				/*
-				String test = "Y";
-				test = test + br.readLine() + test;
-		
-				
-				signalActivity(test);
-				 */
-				
-				/*
-				inputData = br.readLine();
-				
-				if(!inputData.equals("wdft_client_hello"))
-				{
-					throw new IOException("Invalid WDFT protocol message");
-					
-				}
-				
-				pw.println("wdft_server_hello");
-				
-				
-				inputData = br.readLine();
-				
-				
-				if(inputData == null)
-				{
-					throw new IOException("File name was null");
-					
-				}
-				
-				
-				fileName = inputData;
-				
-				pw.println("wdft_server_ready");
-	
-				*/
-				
-				//signalActivity("Handshake complete, getting file: " + fileName);
-	
+
 				String savedAs = "WDFL_File_" + System.currentTimeMillis()+".pdf";
 			    File file = new File(saveLocation, savedAs);
 			    
@@ -147,20 +107,7 @@ public class ServerService extends IntentService {
 			    }
 			    		    
 	
-			    /*
-			    fos.close();
-			    bos.close();
-			    
-			    br.close();
-			    isr.close();
-			    is.close();
-			    
-			    pw.close();
-			    os.close();
-			    		    
-			    socket.close();
-			    */
-			    
+
 			    bos.close();
 			    socket.close();
 	
@@ -182,7 +129,7 @@ public class ServerService extends IntentService {
 
 		}
 			
-		//Signal that operation is complete
+
 		serverResult.send(port, null);
 		
 		
@@ -204,9 +151,7 @@ public class ServerService extends IntentService {
 	{
 		serviceEnabled = false;
 		
-		//Signal that the service was stopped 
-		//serverResult.send(port, new Bundle());
-		
+
 		stopSelf();
 	}
 
