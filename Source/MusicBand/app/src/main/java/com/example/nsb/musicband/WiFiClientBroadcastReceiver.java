@@ -66,26 +66,22 @@ public class WiFiClientBroadcastReceiver extends BroadcastReceiver {
         	
         	if(networkState.isConnected())
         	{
-        		//set client state so that all needed fields to make a transfer are ready
-        		
-        		//activity.setTransferStatus(true);
+
         		activity.setNetworkToReadyState(true, wifiInfo, device);
         		activity.setClientStatus("Connection Status: Connected");
         	}
         	else
         	{
-        		//set variables to disable file transfer and reset client back to original state
+
 
         		activity.setTransferStatus(false);
         		activity.setClientStatus("Connection Status: Disconnected");
         		manager.cancelConnect(channel, null);
 
         	}
-        	//activity.setClientStatus(networkState.isConnected());
-        	
-            // Respond to new connection or disconnections
+
         } else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
-            // Respond to this device's wifi state changing
+
         }
     }
 }
