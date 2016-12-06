@@ -1,10 +1,7 @@
-
-
 package com.example.nsb.musicband;
 
 import android.content.BroadcastReceiver;
 import android.net.wifi.p2p.WifiP2pInfo;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.NetworkInfo;
@@ -12,7 +9,6 @@ import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pDeviceList;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.net.wifi.p2p.WifiP2pManager.Channel;
-
 
 
 public class WiFiClientBroadcastReceiver extends BroadcastReceiver {
@@ -35,7 +31,7 @@ public class WiFiClientBroadcastReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION.equals(action)) {
-            // Check to see if Wi-Fi is enabled and notify appropriate activity
+
             int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
             
             if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
@@ -45,7 +41,7 @@ public class WiFiClientBroadcastReceiver extends BroadcastReceiver {
             }
             
         } else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
-        	//This broadcast is sent when status of in range peers changes. Attempt to get current list of peers. 
+        	//This broadcast is sent when status of in range peers changes. Attempt to get current list of peers.
         	
         	manager.requestPeers(channel, new WifiP2pManager.PeerListListener() {
 				
@@ -56,7 +52,7 @@ public class WiFiClientBroadcastReceiver extends BroadcastReceiver {
 				}
 			});
         	
-        	//update UI with list of peers 
+
         	
         } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
         	
